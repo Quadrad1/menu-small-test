@@ -1,0 +1,119 @@
+@import "../components/variables.scss";
+@import "../base/smart-grid.scss";
+
+
+.menu{
+    width: 1000px;
+    margin: 100px auto;
+    border: 1px solid #dcdcdc;
+    padding: 15px;
+    &__selected{
+        padding: 15px 10px;
+        border-top: 1px solid #dcdcdc;
+        border-bottom: 1px solid #dcdcdc;
+        font-size: 20px;
+    }
+}
+.breadcrums{
+    width: 100%;
+    display: flex;
+    padding:10px;
+    &__item{
+        color: #adadad;
+        margin: 0 10px 0 0;
+        transition: 0.3s color;
+        cursor: pointer;
+        font-size: 14px;
+        transition: 0.3s all;
+    }
+    &__item:hover{
+        color: #333;
+        transition: 0.3s all;
+    }
+    &__item:after{
+        //display: inline;
+        text-decoration: none;
+        margin-left: 10px;
+        content: ">";
+        width: 15px;
+        height: 15px;
+    }
+    &__item:last-child:after{
+        display: none;
+        text-decoration: none;
+        margin-left: 10px;
+        content: "->";
+        width: 15px;
+        height: 15px;
+    }
+
+    &__item:last-child{
+        color: #333;
+        margin: 0 10px 0 0;
+        border-bottom: none; 
+        cursor: pointer;
+    }
+}
+.full-screen{
+    width: 100%;
+    box-sizing: border-box;
+    margin:20px 0;
+    &__item{
+        max-width: 220px;
+        padding: 10px 10px; 
+        cursor: pointer;
+        color: #333;  
+        font-size: 15px; 
+        transition: 0.3s background;
+        position: relative;
+        &__sub-text{
+            color: #adadad;
+        }
+    }
+    &__item:hover{
+        transition: 0.3s background;
+        background: #eaeaea; 
+        border-radius: 3px;  
+    }
+    
+}
+.parent-item:hover{
+    background: #eaeaea;
+}
+.parent-item:hover > .sub-list{
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.sub-list{
+    position: absolute;
+    background: #fff;
+    top: 0;
+    left: 0;
+    min-height: 334px;
+    width: 220px;
+    left: 99.99%;
+    border: 1px solid #dcdcdc;
+    transition: opacity 0.5s;
+    z-index: -10;
+    opacity: 0;
+    &__item{
+        max-width: 220px;
+        padding: 10px 10px; 
+        cursor: pointer;
+        color: #333;  
+        font-size: 15px; 
+        transition: 0.3s background;
+        position: relative;
+    }
+}
+.list-title{
+    color: #dcdcdc;
+    font-size: 13px;
+    padding: 10px 0 10px 10px;
+    border-bottom: 1px solid #eaeaea;
+    max-width: 220px;
+}
+// ---------------------------
+// ---------------------------
+// ---------------------------
